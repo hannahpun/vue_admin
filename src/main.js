@@ -18,6 +18,7 @@ Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.use(VueAxios, axios)
 Vue.use(underscore)
+Vue.use(require('vue-faker'))
 
 /* eslint-disable no-new */
 new Vue({

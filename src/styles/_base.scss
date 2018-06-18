@@ -8,11 +8,16 @@ input:focus{
     outline: none;
 }
 .h1, h1{
-
+    font-size: 24px;
+    font-weight: bold;
 }
 .h2, h2{
-   
+   font-size: 20px;
+   font-weight: bold;
 }
-.h3, h3{
- 
+.subTitle{
+    font-weight: bold;
+}
+table{
+    font-size: 14;
 }
