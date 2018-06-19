@@ -13,7 +13,7 @@
       <el-menu-item index="2">ORDERS</el-menu-item>
       <el-menu-item index="3">PRODUCT</el-menu-item>
     </el-menu>
-    <router-view/>
+    <div class="container"><router-view/></div>
   </div>
 </template>
 
@@ -36,7 +36,10 @@ export default {
 
 <style>
 #app {
- 
+
+}
+.container{
+  padding: 20px 30px;
 }
 .logo{
   float: left;

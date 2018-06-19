@@ -19,6 +19,7 @@ Vue.use(ElementUI)
 Vue.use(VueAxios, axios)
 Vue.use(underscore)
 Vue.use(require('vue-faker'))
+Vue.use(require('vue-moment'))
 
 /* eslint-disable no-new */
 new Vue({
