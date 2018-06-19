@@ -1,23 +1,6 @@
 <template>
   <div>
 		
-		<div class="filterSelect">
-			<label class="subTitle">EDIT SEccccCTION</label>
-			<el-select 
-			class="filterTab"
-			v-model="sellectTable" 
-			multiple
-			collapse-tags
-			placeholder="请选择" >
-			<el-option
-				v-for="item in options"
-				:key="item.value"
-				:label="item.text"
-				:value="item.value">
-			</el-option>
-		</el-select>
-		</div>
-		
     <el-table
         ref="multipleTable"
         :data="tableData"
@@ -30,15 +13,11 @@
         <el-table-column 
         type="selection">
         </el-table-column>
-        <el-table-column  v-if="filterTab('orderId')"
-        prop="orderId"
-        label="Order List">
-        </el-table-column>
-        <el-table-column  v-if="filterTab('name')"
+        <el-table-column
         prop="name"
         label="Customer">
         </el-table-column>
-         <el-table-column v-if="filterTab('product')"
+         <el-table-column
         label="Product List"
 				width="160">
 				<template slot-scope="scope">
@@ -53,33 +32,25 @@
 					</div>
 				</template>
         </el-table-column>
-        <el-table-column v-if="filterTab('total')"
+        <el-table-column 
         prop="total"
 				align="center"
         label="Total"
         show-overflow-tooltip>
         </el-table-column>
-        <el-table-column v-if="filterTab('addCartTime')"
+        <el-table-column 
         prop="addCartTime"
         label="Add to Cart">
         </el-table-column>
-        <el-table-column  v-if="filterTab('chackTime')"
+        <el-table-column 
         prop="chackTime"
         label="Check-out">
         </el-table-column>
-        <el-table-column  v-if="filterTab('address')"
+        <el-table-column 
         prop="address"
         label="Address">
         </el-table-column>
-        <el-table-column  v-if="filterTab('phone')"
-        prop="phone"
-        label="Phone">
-        </el-table-column>
-        <el-table-column  v-if="filterTab('email')"
-        prop="email"
-        label="Email">
-        </el-table-column>
-        <el-table-column  v-if="filterTab('tag')"
+        <el-table-column 
 				min-width="80"
 				prop="tag"
 				label="Status" :filters="statusOptions" :filter-method="filterTag" filter-placement="bottom-end">
@@ -91,8 +62,7 @@
 								:label="item.text"
 								:value="item.value">
 							</el-option>
-						</el-select>
-            <!-- <el-tag disable-transitions>{{scope.row.tag}}</el-tag> -->
+					  </el-select>
         </template>
         </el-table-column>
     </el-table>
@@ -105,25 +75,12 @@ export default {
   data() {
     return {
 				multipleSelection: [],
-				options: [
-					{ text: 'addCartTime', value: 'addCartTime' }, 
-					{ text: 'chackTime', value: 'chackTime' }, 
-					{ text: 'product', value: 'product' }, 
-					{ text: 'total', value: 'total' },
-					{ text: 'orderId', value: 'orderId' },
-					{ text: 'tag', value: 'tag' },
-					{ text: 'name', value: 'name' },
-					{ text: 'phone', value: 'phone' },
-					{ text: 'email', value: 'email' },
-					{ text: 'address', value: 'address' },
-				],
 				statusOptions: [
 					{ text: 'PAID', value: 'paid' }, 
 					{ text: 'UNPAID', value: 'unpaid' }, 
 					{ text: 'SHIPPING', value: 'shipping' }, 
 					{ text: 'DONE', value: 'done' }
-				],
-				sellectTable: ["name", "product", "total", "addCartTime", "chackTime", "address", "tag"]
+        ]      
       }
     },
     computed: {
@@ -135,6 +92,14 @@ export default {
 								let productPrice1 = this.$faker().commerce.price();
 								let productPrice2 = this.$faker().commerce.price();
                 myData.push({
+                    name: this.$faker().commerce.productName(),
+                    origin: productPrice1,
+                    discount: productPrice1*0.8,
+                    detail: [
+                      {Grey: 10, Blue: 20},  //L
+                      {Grey: 5, Blue: 30},  //M
+                      {Grey: 8, Blue: 9},  //S
+                    ],
                     addCartTime: this.$moment(this.$faker().date.past()).format("YYYY/M/D HH:m").toString(),
                     chackTime: this.$moment(this.$faker().date.past()).format("YYYY/M/D HH:m").toString(),
                     // product: this.$faker().commerce.product() + '\n'+  this.$faker().commerce.price(),
@@ -143,11 +108,8 @@ export default {
 											{product: this.$faker().commerce.product(), price: "$" +productPrice2, num: 1}
 										],
 										total: "$" + (parseInt(productPrice1) + parseInt(productPrice2)),
-										orderId: i,
 										tag: myTag[Math.floor(Math.random() * myTag.length)],
                     name: this.$faker().name.firstName(),
-                    phone: this.$faker().phone.phoneNumberFormat(),
-                    email: this.$faker().internet.email(),
                     address: this.$faker().address.streetAddress() + ', \n'+ this.$faker().address.city()
 
                 })
