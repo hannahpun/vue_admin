@@ -4,14 +4,15 @@
       :default-active="activeIndex2"
       class="el-menu-demo"
       mode="horizontal"
+      router
       @select="handleSelect"
       background-color="#000"
       text-color="#9B9B9B"
       active-text-color="#fff">
       <h1 class="logo">Shoptime</h1>
-      <el-menu-item index="1">HOME</el-menu-item>
-      <el-menu-item index="2">ORDERS</el-menu-item>
-      <el-menu-item index="3">PRODUCT</el-menu-item>
+      <el-menu-item index="home">HOME</el-menu-item>
+      <el-menu-item index="order">ORDERS</el-menu-item>
+      <el-menu-item index="product">PRODUCT</el-menu-item>
     </el-menu>
     <div class="container"><router-view/></div>
   </div>

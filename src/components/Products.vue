@@ -2,7 +2,7 @@
   <div>
 		
 		<div class="filterSelect">
-			<label class="subTitle">EDIT SECTION</label>
+			<label class="subTitle">EDIT SEccccCTION</label>
 			<el-select 
 			class="filterTab"
 			v-model="sellectTable" 

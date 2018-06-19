@@ -1,0 +1,28 @@
+// Order Status
+.el-table .done .cell{
+    text-decoration: line-through;
+    color: $grey-m;
+}
+.el-table .unpaid .cell{
+    color: $grey-m;
+}
+table .el-select .el-input .el-select__caret{
+    color: #fff;
+}
+table .el-select .el-input.el-input--suffix .el-input__inner{
+    color: #fff;
+    border-width: 0;
+}
+.done .el-input--suffix .el-input__inner{
+    background-color: $blue;
+    
+}
+.paid .el-input--suffix .el-input__inner{
+    background-color: $green;
+}
+.shipping .el-input--suffix .el-input__inner{
+    background-color: $orange;
+}
+.unpaid .el-input--suffix .el-input__inner{
+    background-color: $grey-l;
+}
