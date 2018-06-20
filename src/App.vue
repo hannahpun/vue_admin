@@ -5,7 +5,6 @@
       class="el-menu-demo"
       mode="horizontal"
       router
-      @select="handleSelect"
       background-color="#000"
       text-color="#9B9B9B"
       active-text-color="#fff">
@@ -26,11 +25,6 @@ export default {
       activeIndex: '1',
       activeIndex2: '1'
     };
-  },
-  methods: {
-    handleSelect(key, keyPath) {
-      console.log(key, keyPath);
-    }
   }
 }
 </script>

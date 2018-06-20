@@ -17,12 +17,12 @@ table .el-select .el-input.el-input--suffix .el-input__inner{
     background-color: $blue;
     
 }
-.paid .el-input--suffix .el-input__inner{
+.paid .el-input--suffix .el-input__inner, .publish .el-input--suffix .el-input__inner{
     background-color: $green;
 }
 .shipping .el-input--suffix .el-input__inner{
     background-color: $orange;
 }
-.unpaid .el-input--suffix .el-input__inner{
+.unpaid .el-input--suffix .el-input__inner, .unpublish .el-input--suffix .el-input__inner{
     background-color: $grey-l;
 }
