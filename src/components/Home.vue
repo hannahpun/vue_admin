@@ -60,9 +60,30 @@
 					<p class="number">1,057</p>
 					<p class="increase"><i class="el-icon-back"></i>30%</p>
 				</div>
+				<div class="summery-content">
+					<p class="name">Hannahpun.me</p>
+					<p class="number">657</p>
+					<p class="increase"><i class="el-icon-back"></i>70%</p>
+				</div>
 			</div>
 			<div class="box">
 				<h1>Latest Orders</h1>
+				<div class="summery-buy" v-for="item in 3" :key="item.id">
+					<div class="img"><img :src="'https://picsum.photos/80/80?image='+$_.random(980, 1000)" alt=""></div>
+					<div class="content">
+						<p class='title'>{{$faker().commerce.productName()}}</p>
+						<div class="detail">
+							<ul>
+								<li>{{$moment().format("YYYY/MM/DD")}}</li>
+								<li>{{$faker().name.firstName()}}</li>
+							</ul>
+							<div class="summery-price">
+								<span class="total">Total</span>
+								<p class="price">{{$_.random(10, 3000)}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
   </div>
@@ -174,6 +195,46 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+	.summery-buy{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-bottom: 1px solid $grey;
+		padding: 10px 0;
+		.title{
+			font-size: 20px;
+			margin-bottom: 10px;
+			font-weight: bold;
+		}
+		.price{
+			font-size: 20px;
+			font-weight: bold;
+			margin-top: 5px;
+		}
+		.total{
+			font-size: 14px;
+			
+		}
+		.content{
+			flex: 1;
+			margin-left: 20px;
+		}
+		.summery-price{
+			text-align: right;
+		}
+		ul{
+			color: $grey-l;
+			font-size: 14px;
+			li{
+				padding: 5px 0;
+			}
+		}
+		.detail{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
 	.filter-header{
 		display: flex;
 		align-items: center;
