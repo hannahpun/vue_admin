@@ -95,8 +95,8 @@ export default {
                 myData.push({
                     img: `https://picsum.photos/50/50?image=${_.random(980, 1000)}`,
                     name: this.$faker().commerce.productName(),
-                    origin: productPrice1,
-                    discount: parseInt(productPrice1)*0.8,
+                    origin: Math.floor(productPrice1),
+                    discount: Math.floor(parseInt(productPrice1)*0.8),
                     detail: [{
                       size: 'L',
                       details: [{
