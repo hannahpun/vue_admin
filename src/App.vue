@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <el-menu
-      :default-active="activeIndex2"
+      :default-active="activeIndex"
       class="el-menu-demo"
       mode="horizontal"
       router
@@ -22,8 +22,7 @@ export default {
   name: 'App',
   data() {
     return {
-      activeIndex: '1',
-      activeIndex2: '1'
+      activeIndex: this.$route.name == 'root' ? 'home': this.$route.name,
     };
   }
 }

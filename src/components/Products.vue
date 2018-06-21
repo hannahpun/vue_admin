@@ -15,7 +15,7 @@
         </el-table-column>
          <el-table-column
         label="Product List"
-				width="200">
+				width="220">
 				<template slot-scope="scope">
 					<div class="table-img">
               <img :src="scope.row.img" alt="">
@@ -36,6 +36,7 @@
         </el-table-column>
         <el-table-column 
         prop="detail"
+        min-width="150"
         label="Size">
         <template slot-scope="scope">
 					<div v-for="(items, key, index) in scope.row.detail" :key="items.id" class="table-product">
@@ -93,7 +94,7 @@ export default {
 								let productPrice1 = this.$faker().commerce.price();
 								let productPrice2 = this.$faker().commerce.price();
                 myData.push({
-                    img: `https://picsum.photos/50/50?image=${_.random(980, 1000)}`,
+                    img: `https://picsum.photos/70/70?image=${_.random(980, 1000)}`,
                     name: this.$faker().commerce.productName(),
                     origin: Math.floor(productPrice1),
                     discount: Math.floor(parseInt(productPrice1)*0.8),
