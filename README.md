@@ -1,5 +1,6 @@
 # vue_admin
 
+![Image](http://www.hannahpun.me/vue_listfilter/stage3.png)
 > A Vue.js project
 
 ## Build Setup
