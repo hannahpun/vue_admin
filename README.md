@@ -1,7 +1,9 @@
-# vue_admin
+# What is it?
+
+> An admin system template based on Vue.js and element.js 
 
 ![Image](http://www.hannahpun.me/vue_listfilter/stage3.png)
-> A Vue.js project
+
 
 ## Build Setup
 
